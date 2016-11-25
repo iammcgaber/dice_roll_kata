@@ -62,5 +62,11 @@ public class DiceRollTest {
 		}
 		Assert.assertEquals(5, total);
 	}
+	
+	@Test
+	public void test_roll_1_2_3_4_5_returns_140() {
+		int[] testRolls = diceResults.calculateCount(new int[] {1, 2, 3, 4, 5});
+		Assert.assertEquals(140, diceResults.calculateScore(testRolls));
+	}
 
 }

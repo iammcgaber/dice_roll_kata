@@ -25,5 +25,10 @@ public class DiceRollTest {
 		Assert.assertNotNull(dice);
 		Assert.assertNotNull(diceResults);
 	}
+	
+	@Test
+	public void test_dice_roll_not_null () {
+		Assert.assertNotNull(dice.rollDice());
+	}
 
 }

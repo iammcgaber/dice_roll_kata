@@ -69,4 +69,33 @@ public class DiceRollTest {
 		Assert.assertEquals(140, diceResults.calculateScore(testRolls));
 	}
 
+	@Test
+	public void test_roll_1_1_1_2_2_equals_1000() {
+		int[] testRolls = diceResults.calculateCount(new int[] {1, 1, 1, 2, 2});
+		Assert.assertEquals(1000, diceResults.calculateScore(testRolls));
+	}
+	
+	@Test
+	public void test_roll_5_4_5_4_5_equals_580() {
+		int[] testRolls = diceResults.calculateCount(new int[] {5, 4, 5, 4, 5});
+		Assert.assertEquals(580, diceResults.calculateScore(testRolls));
+	}
+	
+	@Test
+	public void test_roll_4_4_4_4_4_equals_480() {
+		int[] testRolls = diceResults.calculateCount(new int[] {4, 4, 4, 4, 4});
+		Assert.assertEquals(480, diceResults.calculateScore(testRolls));
+	}
+	
+	@Test
+	public void test_roll_1_5_5_5_1_equals_700() {
+		int[] testRolls = diceResults.calculateCount(new int[] {1, 5, 5, 5, 1});
+		Assert.assertEquals(700, diceResults.calculateScore(testRolls));
+	}
+	
+	@Test
+	public void test_roll_1_1_1_1_1_equals_1200() {
+		int[] testRolls = diceResults.calculateCount(new int[] {1, 1, 1, 1, 1});
+		Assert.assertEquals(1200, diceResults.calculateScore(testRolls));
+	}
 }

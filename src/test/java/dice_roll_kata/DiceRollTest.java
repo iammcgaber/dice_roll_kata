@@ -41,5 +41,26 @@ public class DiceRollTest {
 			Assert.assertTrue("Error, random is too low", low <= random);
 		}
 	}
+	
+	@Test
+	public void test_dice_roll_result_array_is_populated_correctly() {
+		int[] results = diceResults.getRollResults();
+		for(int i = 0; i < results.length; i++) {
+			Assert.assertTrue("Error, the result is zero. It should be between 1 and 6", results[i] != 0);
+		}
+	}
+	
+	@Test
+	public void test_all_dice_are_counted() {
+		int total = 0;
+		int[] results = diceResults.getRollResults();
+		int[] score = diceResults.calculateCount(results);
+		for(int i = 0; i < score.length; i++) {
+			if(score[i] != 0) {
+				total += score[i];
+			}
+		}
+		Assert.assertEquals(5, total);
+	}
 
 }

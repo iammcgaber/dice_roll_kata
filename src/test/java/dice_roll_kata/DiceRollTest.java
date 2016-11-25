@@ -30,5 +30,16 @@ public class DiceRollTest {
 	public void test_dice_roll_not_null () {
 		Assert.assertNotNull(dice.rollDice());
 	}
+	
+	@Test
+	public void test_dice_roll_result_greater_than_0_and_less_than_7() {
+		for(int i = 0; i < 10; i++) {
+			int random = dice.rollDice();
+			int high = 6;
+			int low = 1;
+			Assert.assertTrue("Error, random is too high", high >= random);
+			Assert.assertTrue("Error, random is too low", low <= random);
+		}
+	}
 
 }
